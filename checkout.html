@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Оформлення замовлення</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <a href="index.html">🏠 Головна</a>
+      <a href="cart.html">🛒 Кошик</a>
+      <a href="checkout.html">💳 Оформлення</a>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+    <h1>💳 Оформлення замовлення</h1>
+  </header>
+
+  <main>
+    <p><strong>Загальна сума:</strong> <span id="total-checkout">0</span></p>
+
+    <form id="checkout-form">
+      <input type="text" placeholder="Ваше ім’я" required />
+      <input type="text" placeholder="Адреса доставки" required />
+      <input type="tel" placeholder="Телефон" required />
+      <button type="submit">Підтвердити замовлення</button>
+    </form>
+  </main>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

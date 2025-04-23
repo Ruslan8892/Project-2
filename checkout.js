@@ -24,19 +24,17 @@ function applyTheme(theme) {
   
   let total = cart.reduce((sum, item) => sum + item.price, 0);
   totalCheckout.textContent = total;
-  document.getElementById("checkout-form").addEventListener("submit", (e) => {
+  document.getElementById("checkout-form").addEventListener("submit", function (e) {
     e.preventDefault();
-  
     const inputs = document.querySelectorAll("#checkout-form input");
     const phone = inputs[2].value.trim();
   
-    const phoneRegex = /^\+?[\d\s\-()]{10,15}$/;
+    const phoneRegex = /^\+?380\d{9}$/;
   
-    if (!phoneRegex.test(phone)) {
-      alert("⚠️ Введіть коректний номер телефону!");
+    if (!inputs || !phoneRegex.test(phone)) {
+      alert("Введіть правильні дані (наприклад, +380991234567)");
       return;
     }
-  
     alert("✅ Замовлення оформлено! Очікуйте доставку 🚚");
     localStorage.removeItem("cart");
     window.location.href = "index.html";

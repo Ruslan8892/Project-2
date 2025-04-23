@@ -50,3 +50,11 @@ function applyTheme(theme) {
         localStorage.removeItem("cart");
         renderCart();
       });
+      document.getElementById("buy-now-btn").addEventListener("click", () => {
+        if (cart.length === 0) {
+          alert("Кошик порожній!");
+        } else {
+          window.location.href = "checkout.html";
+        }
+      });
+      

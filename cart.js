@@ -1,11 +1,14 @@
 const cartItems = document.getElementById("cart-items");
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let totalPriceEl = document.getElementById("total-price");
 
 function renderCart() {
   cartItems.innerHTML = "";
+  let sum = 0
 
   if (cart.length === 0) {
     cartItems.innerHTML = "<p>Кошик пустий 🛒</p>";
+    totalPriceEl.innerHTML = "0";
     return;
   }
 
@@ -16,7 +19,9 @@ function renderCart() {
       <button onclick="removeFromCart(${index})">🗑 Видалити</button>
     `;
     cartItems.appendChild(li);
+    sum += item.price
   });
+  totalPriceEl.innerHTML = sum;
 }
 
 function removeFromCart(index) {
